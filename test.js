@@ -29,12 +29,23 @@
 // };
 // console.log(isPowerOfTwo(2));
 
-var isPowerOfThree = function(n) {
-    while(n%3==0){
-        n/=3
+// var isPowerOfThree = function(n) {
+//     while(n%3==0){
+//         n/=3
+//     }
+//     return n===1
+    
+// };
+// console.log(isPowerOfTwo(2));
+
+
+var isPowerOfFour = function(n) {
+    while(n%4==0){
+        n/=4
     }
     return n===1
     
 };
-console.log(isPowerOfTwo(2));
+console.log(isPowerOfFour(2));
+
 
