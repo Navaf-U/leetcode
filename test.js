@@ -12,11 +12,20 @@
 //   return finalRes
 // };
 
-var myPow = function(x, n){
-    return Math.pow(x,n)
+// var myPow = function(x, n){
+//     return Math.pow(x,n)
+    
+// };
+// let x = 2.00000
+// let n = 10
+// console.log(myPow(x,n));
+
+var isPowerOfTwo = function(n) {
+    while(n%2==0){
+        n/=2
+    }
+    return n===1
     
 };
-let x = 2.00000
-let n = 10
-console.log(myPow(x,n));
+console.log(isPowerOfTwo(2));
 
