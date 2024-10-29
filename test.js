@@ -20,9 +20,18 @@
 // let n = 10
 // console.log(myPow(x,n));
 
-var isPowerOfTwo = function(n) {
-    while(n%2==0){
-        n/=2
+// var isPowerOfTwo = function(n) {
+//     while(n%2==0){
+//         n/=2
+//     }
+//     return n===1
+    
+// };
+// console.log(isPowerOfTwo(2));
+
+var isPowerOfThree = function(n) {
+    while(n%3==0){
+        n/=3
     }
     return n===1
     
