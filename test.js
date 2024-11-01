@@ -50,16 +50,35 @@
 
 
 
-var singleNonDuplicate = function(nums) {
-    let res=[]
-    for(let i=0;i<nums.length;i++){
-        if(nums[i] !== nums[i+1] && nums[i] !== nums[i-1] ){
-            res.push(nums[i])
+// var singleNonDuplicate = function(nums) {
+//     let res=[]
+//     for(let i=0;i<nums.length;i++){
+//         if(nums[i] !== nums[i+1] && nums[i] !== nums[i-1] ){
+//             res.push(nums[i])
           
+//         }
+//     }
+//     return Number(res)
+// };
+
+// nums = [1,1,2,3,3,4,4,8,8]
+// console.log(singleNonDuplicate(nums));
+
+
+var makeFancyString = function(s) {
+    let res =""
+    for(let i=0;i<s.length;i++){
+        if(s[i]==s[i+1] && s[i]==s[i+2]){
+        continue
+        }else{
+            res += s[i]
         }
+
     }
-    return Number(res)
+    return res
 };
 
-nums = [1,1,2,3,3,4,4,8,8]
-console.log(singleNonDuplicate(nums));
+console.log(makeFancyString('aaabaaaa'));
+console.log(makeFancyString("leeetcode"));
+console.log(makeFancyString('aab'));
+
