@@ -65,20 +65,43 @@
 // console.log(singleNonDuplicate(nums));
 
 
-var makeFancyString = function(s) {
-    let res =""
-    for(let i=0;i<s.length;i++){
-        if(s[i]==s[i+1] && s[i]==s[i+2]){
-        continue
-        }else{
-            res += s[i]
-        }
+// var makeFancyString = function(s) {
+//     let res =""
+//     for(let i=0;i<s.length;i++){
+//         if(s[i]==s[i+1] && s[i]==s[i+2]){
+//         continue
+//         }else{
+//             res += s[i]
+//         }
 
+//     }
+//     return res
+// };
+
+// console.log(makeFancyString('aaabaaaa'));
+// console.log(makeFancyString("leeetcode"));
+// console.log(makeFancyString('aab'));
+
+
+var isCircularSentence = function(sentence) {
+    let res=""
+    var result=false
+    for(let i=0;i<sentence.length;i++){
+        res = sentence.charAt(i)
+        if( res === " " ){
+            if(sentence.charAt(i-1) !== sentence.charAt(i+1)){
+                return result 
+            }
+        }
     }
-    return res
+    if(res === sentence.charAt(0)){
+        result = true
+    }else{
+        result = false
+    }
+    return result
 };
 
-console.log(makeFancyString('aaabaaaa'));
-console.log(makeFancyString("leeetcode"));
-console.log(makeFancyString('aab'));
+console.log(isCircularSentence("MuFoevIXCZzrpXeRmTs ll sM"));
+console.log(isCircularSentence("leetcode exercises sound delightful"));
 
