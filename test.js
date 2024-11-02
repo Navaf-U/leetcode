@@ -105,8 +105,20 @@
 // console.log(isCircularSentence("MuFoevIXCZzrpXeRmTs ll sM"));
 // console.log(isCircularSentence("leetcode exercises sound delightful"));
 
-var convertTemperature = function(celsius) {
-    const Kelvin =celsius + 273.15
-    const Fahrenheit =celsius * 1.80 + 32.00
-    return [Kelvin,Fahrenheit]
-};
+// var convertTemperature = function(celsius) {
+//     const Kelvin =celsius + 273.15
+//     const Fahrenheit =celsius * 1.80 + 32.00
+//     return [Kelvin,Fahrenheit]
+// };
+
+var largestNumber = function(nums) {
+    const owns = nums.map((item)=>{
+         return item.toString()
+     })
+     const test = owns.sort((a, b) => (b + a).localeCompare(a + b));   
+     const final = test.reduce((acc,curr)=>acc+curr.toString())
+     if(final == 0){
+         return "0"
+     }
+    return final
+ };
