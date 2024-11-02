@@ -83,25 +83,30 @@
 // console.log(makeFancyString('aab'));
 
 
-var isCircularSentence = function(sentence) {
-    let res=""
-    var result=false
-    for(let i=0;i<sentence.length;i++){
-        res = sentence.charAt(i)
-        if( res === " " ){
-            if(sentence.charAt(i-1) !== sentence.charAt(i+1)){
-                return result 
-            }
-        }
-    }
-    if(res === sentence.charAt(0)){
-        result = true
-    }else{
-        result = false
-    }
-    return result
+// var isCircularSentence = function(sentence) {
+//     let res=""
+//     var result=false
+//     for(let i=0;i<sentence.length;i++){
+//         res = sentence.charAt(i)
+//         if( res === " " ){
+//             if(sentence.charAt(i-1) !== sentence.charAt(i+1)){
+//                 return result 
+//             }
+//         }
+//     }
+//     if(res === sentence.charAt(0)){
+//         result = true
+//     }else{
+//         result = false
+//     }
+//     return result
+// };
+
+// console.log(isCircularSentence("MuFoevIXCZzrpXeRmTs ll sM"));
+// console.log(isCircularSentence("leetcode exercises sound delightful"));
+
+var convertTemperature = function(celsius) {
+    const Kelvin =celsius + 273.15
+    const Fahrenheit =celsius * 1.80 + 32.00
+    return [Kelvin,Fahrenheit]
 };
-
-console.log(isCircularSentence("MuFoevIXCZzrpXeRmTs ll sM"));
-console.log(isCircularSentence("leetcode exercises sound delightful"));
-
