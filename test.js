@@ -111,14 +111,29 @@
 //     return [Kelvin,Fahrenheit]
 // };
 
-var largestNumber = function(nums) {
-    const owns = nums.map((item)=>{
-         return item.toString()
-     })
-     const test = owns.sort((a, b) => (b + a).localeCompare(a + b));   
-     const final = test.reduce((acc,curr)=>acc+curr.toString())
-     if(final == 0){
-         return "0"
-     }
-    return final
- };
+// var largestNumber = function(nums) {
+//     const owns = nums.map((item)=>{
+//          return item.toString()
+//      })
+//      const test = owns.sort((a, b) => (b + a).localeCompare(a + b));   
+//      const final = test.reduce((acc,curr)=>acc+curr.toString())
+//      if(final == 0){
+//          return "0"
+//      }
+//     return final
+//  };
+
+
+var rotateString = function(s, goal) {
+    if(s.length !== goal.length){
+        return false
+    }
+    const result= s+s
+    return result.includes(goal)
+    
+};
+console.log(rotateString("abcde","cdeab"));
+
+console.log(rotateString("abcde","abced"));
+
+
