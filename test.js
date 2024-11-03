@@ -124,16 +124,26 @@
 //  };
 
 
-var rotateString = function(s, goal) {
-    if(s.length !== goal.length){
-        return false
-    }
-    const result= s+s
-    return result.includes(goal)
+// var rotateString = function(s, goal) {
+//     if(s.length !== goal.length){
+//         return false
+//     }
+//     const result= s+s
+//     return result.includes(goal)
     
+// };
+// console.log(rotateString("abcde","cdeab"));
+
+// console.log(rotateString("abcde","abced"));
+
+
+var arrayRankTransform = function(arr) {
+    let ranks = [];
+    let sortarr = [...new Set(arr)]
+    sortarr.sort((a, b) => a - b);
+    sortarr.forEach((num, index) => {
+     ranks[num]=index+1;
+ });
+     return arr.map(num => ranks[num]);
 };
-console.log(rotateString("abcde","cdeab"));
-
-console.log(rotateString("abcde","abced"));
-
-
+console.log(arrayRankTransform([37,12,28,9,100,56,80,5,12]));
