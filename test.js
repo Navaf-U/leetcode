@@ -137,13 +137,27 @@
 // console.log(rotateString("abcde","abced"));
 
 
-var arrayRankTransform = function(arr) {
-    let ranks = [];
-    let sortarr = [...new Set(arr)]
-    sortarr.sort((a, b) => a - b);
-    sortarr.forEach((num, index) => {
-     ranks[num]=index+1;
- });
-     return arr.map(num => ranks[num]);
+// var arrayRankTransform = function(arr) {
+//     let ranks = [];
+//     let sortarr = [...new Set(arr)]
+//     sortarr.sort((a, b) => a - b);
+//     sortarr.forEach((num, index) => {
+//      ranks[num]=index+1;
+//  });
+//      return arr.map(num => ranks[num]);
+// };
+// console.log(arrayRankTransform([37,12,28,9,100,56,80,5,12]));
+
+var compressedString = function(word) {
+    let final = "" 
+    for(let j = 0;j<word.length;j++){
+        let count = 1;
+        for(let i = j+1 ; i < word.length && word[i]===word[j] && count < 9 ;i++){
+            count++
+            j=i
+        }
+        final += count +word[j]
+    }
+    return final
+    
 };
-console.log(arrayRankTransform([37,12,28,9,100,56,80,5,12]));
