@@ -162,15 +162,40 @@
     
 // };
 
-var minimumOperations = function(nums) {
-    let result = 0    
-   for(let i=0;i<nums.length;i++){
-        if(nums[i] % 3 !== 0  ){
-            result++
-        }
+// var minimumOperations = function(nums) {
+//     let result = 0    
+//    for(let i=0;i<nums.length;i++){
+//         if(nums[i] % 3 !== 0  ){
+//             result++
+//         }
+//     }
+//         return result
+// };
+
+// console.log(minimumOperations([1,2,3,4]));
+// console.log(minimumOperations([3,6,9]));
+
+
+var differenceOfSums = function(n, m) {
+    let divisibleYes = []
+    let divisibleNo = []
+    let nums1 = null
+    let nums2 = null
+    
+    for(let i=1;i<=n;i++){
+        if( i % m === 0){
+                divisibleYes.push(i)
+
+                
+            }else{
+                divisibleNo.push(i)
+                
+            }
     }
-        return result
+    
+    nums1 = divisibleYes.reduce((acc,curr)=>acc+curr,0)
+    nums2 = divisibleNo.reduce((acc,curr)=>acc+curr,0)
+    return nums2-nums1
 };
 
-console.log(minimumOperations([1,2,3,4]));
-console.log(minimumOperations([3,6,9]));
+console.log(differenceOfSums(10,3));
