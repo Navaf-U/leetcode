@@ -148,16 +148,29 @@
 // };
 // console.log(arrayRankTransform([37,12,28,9,100,56,80,5,12]));
 
-var compressedString = function(word) {
-    let final = "" 
-    for(let j = 0;j<word.length;j++){
-        let count = 1;
-        for(let i = j+1 ; i < word.length && word[i]===word[j] && count < 9 ;i++){
-            count++
-            j=i
-        }
-        final += count +word[j]
-    }
-    return final
+// var compressedString = function(word) {
+//     let final = "" 
+//     for(let j = 0;j<word.length;j++){
+//         let count = 1;
+//         for(let i = j+1 ; i < word.length && word[i]===word[j] && count < 9 ;i++){
+//             count++
+//             j=i
+//         }
+//         final += count +word[j]
+//     }
+//     return final
     
+// };
+
+var minimumOperations = function(nums) {
+    let result = 0    
+   for(let i=0;i<nums.length;i++){
+        if(nums[i] % 3 !== 0  ){
+            result++
+        }
+    }
+        return result
 };
+
+console.log(minimumOperations([1,2,3,4]));
+console.log(minimumOperations([3,6,9]));
