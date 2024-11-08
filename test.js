@@ -176,26 +176,34 @@
 // console.log(minimumOperations([3,6,9]));
 
 
-var differenceOfSums = function(n, m) {
-    let divisibleYes = []
-    let divisibleNo = []
-    let nums1 = null
-    let nums2 = null
+// var differenceOfSums = function(n, m) {
+//     let divisibleYes = []
+//     let divisibleNo = []
+//     let nums1 = null
+//     let nums2 = null
     
-    for(let i=1;i<=n;i++){
-        if( i % m === 0){
-                divisibleYes.push(i)
+//     for(let i=1;i<=n;i++){
+//         if( i % m === 0){
+//                 divisibleYes.push(i)
 
                 
-            }else{
-                divisibleNo.push(i)
+//             }else{
+//                 divisibleNo.push(i)
                 
-            }
-    }
+//             }
+//     }
     
-    nums1 = divisibleYes.reduce((acc,curr)=>acc+curr,0)
-    nums2 = divisibleNo.reduce((acc,curr)=>acc+curr,0)
-    return nums2-nums1
+//     nums1 = divisibleYes.reduce((acc,curr)=>acc+curr,0)
+//     nums2 = divisibleNo.reduce((acc,curr)=>acc+curr,0)
+//     return nums2-nums1
+// };
+
+// console.log(differenceOfSums(10,3));
+
+var sortArrayByParity = function(nums) {
+    const set1=nums.filter(i=> i%2 == 0)
+    const set2=nums.filter(i=> i%2 !== 0)
+    return set1.concat(set2)
 };
 
-console.log(differenceOfSums(10,3));
+console.log(sortArrayByParity([1,2,4,5,2,1]));
