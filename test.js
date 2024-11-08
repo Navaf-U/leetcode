@@ -200,10 +200,54 @@
 
 // console.log(differenceOfSums(10,3));
 
-var sortArrayByParity = function(nums) {
+// var sortArrayByParity = function(nums) {
+//     let result=[]
+//     const set1=nums.filter(i=> i%2 == 0)
+//     const set2=nums.filter(i=> i%2 !== 0)
+//     for(let i=0;i<set1.length;i++){
+//         for(let j=0;j<set2.length-1;j++){
+//             result.push(set1[i],set2[i])
+//         }
+//     }
+//     return result
+// };
+
+// console.log(sortArrayByParity([1,2,4,5,2,1]));
+
+
+var sortArrayByParityII = function(nums) {
+    let result=[]
     const set1=nums.filter(i=> i%2 == 0)
     const set2=nums.filter(i=> i%2 !== 0)
-    return set1.concat(set2)
-};
 
-console.log(sortArrayByParity([1,2,4,5,2,1]));
+    for(let i=0;i<set1.length;i++){
+           if(set1.length >= 1 && set2.length>=1){
+             result.push(set1[i],set2[i])
+           }
+    }
+    return result
+
+};
+console.log(sortArrayByParityII([4,2,5,7]))
+
+// var sortArrayByParityII = function(nums) {
+//     let result=[]
+//     const set1=nums.filter(i=> i%2 == 0)
+//     const set2=nums.filter(i=> i%2 !== 0)
+//     const l = set1.length + set2.length
+//     console.log(l);
+    
+//     for (let i = 0; i < l; i++) {
+//         result.push(set1[i],set2[i])
+//     }
+//     return result
+
+// };
+// console.log(sortArrayByParityII([4,2,5,7]))
+
+
+// for(let i=0;i<set1.length;i++){
+//     for(let j=0;j<set2.length-1;j++){
+//          result.push(set1[i],set2[j])
+//     }
+// }
