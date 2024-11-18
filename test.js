@@ -215,39 +215,38 @@
 // console.log(sortArrayByParity([1,2,4,5,2,1]));
 
 
-var sortArrayByParityII = function(nums) {
-    let result=[]
-    const set1=nums.filter(i=> i%2 == 0)
-    const set2=nums.filter(i=> i%2 !== 0)
-
-    for(let i=0;i<set1.length;i++){
-           if(set1.length >= 1 && set2.length>=1){
-             result.push(set1[i],set2[i])
-           }
-    }
-    return result
-
-};
-console.log(sortArrayByParityII([4,2,5,7]))
-
 // var sortArrayByParityII = function(nums) {
 //     let result=[]
 //     const set1=nums.filter(i=> i%2 == 0)
 //     const set2=nums.filter(i=> i%2 !== 0)
-//     const l = set1.length + set2.length
-//     console.log(l);
-    
-//     for (let i = 0; i < l; i++) {
-//         result.push(set1[i],set2[i])
+
+//     for(let i=0;i<set1.length;i++){
+//            if(set1.length >= 1 && set2.length>=1){
+//              result.push(set1[i],set2[i])
+//            }
 //     }
 //     return result
 
 // };
 // console.log(sortArrayByParityII([4,2,5,7]))
 
+var reverseWords = function(s) {
+    let result =""
+    let final = ""
+    for (let i = s.length; i >= 0 ; i--) {
+        result += s.charAt(i)
+   }
+   final = result.split(" ").reverse().join(" ")
 
-// for(let i=0;i<set1.length;i++){
-//     for(let j=0;j<set2.length-1;j++){
-//          result.push(set1[i],set2[j])
-//     }
-// }
+   return final
+};
+
+
+
+const s = "Let's take LeetCode contest"
+
+// "s'teL ekat edoCteeL tsetnoc"
+
+const s1 = "Mr Ding"
+console.log(reverseWords(s))
+console.log(reverseWords(s1))
