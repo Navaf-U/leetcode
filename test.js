@@ -230,23 +230,43 @@
 // };
 // console.log(sortArrayByParityII([4,2,5,7]))
 
-var reverseWords = function(s) {
-    let result =""
-    let final = ""
-    for (let i = s.length; i >= 0 ; i--) {
-        result += s.charAt(i)
-   }
-   final = result.split(" ").reverse().join(" ")
+// var reverseWords = function(s) {
+//     let result =""
+//     let final = ""
+//     for (let i = s.length; i >= 0 ; i--) {
+//         result += s.charAt(i)
+//    }
+//    final = result.split(" ").reverse().join(" ")
 
-   return final
-};
+//    return final
+// };
 
 
 
-const s = "Let's take LeetCode contest"
+// const s = "Let's take LeetCode contest"
 
-// "s'teL ekat edoCteeL tsetnoc"
+// // "s'teL ekat edoCteeL tsetnoc"
 
-const s1 = "Mr Ding"
-console.log(reverseWords(s))
-console.log(reverseWords(s1))
+// const s1 = "Mr Ding"
+// console.log(reverseWords(s))
+// console.log(reverseWords(s1))
+
+var addSpaces = function(s,spaces) {
+    let res = "" 
+    let sc = 0 
+    for(let i=0;i<s.length;i++){
+        if(sc < spaces.length && i === spaces[sc]){
+            res += ' '
+            sc++
+        }
+        res += s[i]
+    }
+    return res
+  };
+
+//   let s = "LeetcodeHelpsMeLearn" 
+//   let spaces = [8,13,15]
+  let s1 ="icodeinpython"
+  let spaces1 = [1,5,7,9]
+// console.log(addSpaces(s,spaces));
+console.log(addSpaces(s1,spaces1))
