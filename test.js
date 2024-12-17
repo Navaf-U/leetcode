@@ -251,22 +251,59 @@
 // console.log(reverseWords(s))
 // console.log(reverseWords(s1))
 
-var addSpaces = function(s,spaces) {
-    let res = "" 
-    let sc = 0 
-    for(let i=0;i<s.length;i++){
-        if(sc < spaces.length && i === spaces[sc]){
-            res += ' '
-            sc++
-        }
-        res += s[i]
-    }
-    return res
-  };
+// var addSpaces = function(s,spaces) {
+//     let res = "" 
+//     let sc = 0 
+//     for(let i=0;i<s.length;i++){
+//         if(sc < spaces.length && i === spaces[sc]){
+//             res += ' '
+//             sc++
+//         }
+//         res += s[i]
+//     }
+//     return res
+//   };
 
-//   let s = "LeetcodeHelpsMeLearn" 
-//   let spaces = [8,13,15]
-  let s1 ="icodeinpython"
-  let spaces1 = [1,5,7,9]
-// console.log(addSpaces(s,spaces));
-console.log(addSpaces(s1,spaces1))
+// //   let s = "LeetcodeHelpsMeLearn" 
+// //   let spaces = [8,13,15]
+//   let s1 ="icodeinpython"
+//   let spaces1 = [1,5,7,9]
+// // console.log(addSpaces(s,spaces));
+// console.log(addSpaces(s1,spaces1))
+
+var mergeAlternately = function(word1, word2) {
+    const l = word1.length > word2.length ? word1.length : word2.length
+    let output= ""
+    for(let i = 0 ; i< l;i++ ){
+        if(word1[i]){
+            output += word1[i] 
+        }
+        if(word2[i]){
+            output += word2[i]
+        }
+    }
+
+    return output
+};
+
+
+// var capitalizeTitle = function(title) {
+//     let loss = title.toLowerCase()
+
+//     let output = ""
+    
+//     for(let i = 0 ; i<loss.length;i++){
+//         if(loss[i] == " "){
+//             output +=" "+ loss[i+1].toUpperCase()
+//         }else if (loss[i-1] !== " "){
+//             output += loss[i]
+//         }
+//     }
+    
+//     let o = output[0].toUpperCase() + output.slice(1) 
+//     return o
+    
+// };
+
+// let title = "capiTalIze tHe titLe"
+// console.log(capitalizeTitle(title))
