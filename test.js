@@ -328,13 +328,21 @@
 // let title1 = "i Love Leetcode"
 // console.log(capitalizeTitle(title1))
 
-var detectCapitalUse = function(word) {
-    let wordCap = word.toUpperCase()
-    let wordSma = word.toLowerCase()
-    let firstCap = word[0].toUpperCase() + word.slice(1).toLowerCase();
-    if(word === wordCap || word === wordSma || word === firstCap){
-        return true
-    }else{
-        return false
+
+// var detectCapitalUse = function(word) {
+//     let wordCap = word.toUpperCase()
+//     let wordSma = word.toLowerCase()
+//     let firstCap = word[0].toUpperCase() + word.slice(1).toLowerCase();
+//     if(word === wordCap || word === wordSma || word === firstCap){
+//         return true
+//     }else{
+//         return false
+//     }
+// };
+
+var removeOccurrences = function(s, part) {
+    while (s.includes(part)) {
+        s = s.replace(part, "");
     }
+    return s;
 };
