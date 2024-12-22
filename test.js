@@ -307,23 +307,34 @@
 // let title = "capiTalIze tHe of titLe"
 // console.log(capitalizeTitle(title))
 
-var capitalizeTitle = function(title) {
-    let loss = title.toLowerCase()
-    let splitted = loss.split(" ")
-    result = ""
-    for(let i = 0 ; i<splitted.length ; i++){
-        console.log(splitted[i])
-        if(splitted[i].length !== 2 && splitted[i].length !== 1 ){
-           result += splitted[i][0].toUpperCase() + splitted[i].slice(1) + " " 
-        }
-        else if(splitted[i].length <= 2){
-            result += splitted[i].toLowerCase() + " "
-        }
+// var capitalizeTitle = function(title) {
+//     let loss = title.toLowerCase()
+//     let splitted = loss.split(" ")
+//     result = ""
+//     for(let i = 0 ; i<splitted.length ; i++){
+//         console.log(splitted[i])
+//         if(splitted[i].length !== 2 && splitted[i].length !== 1 ){
+//            result += splitted[i][0].toUpperCase() + splitted[i].slice(1) + " " 
+//         }
+//         else if(splitted[i].length <= 2){
+//             result += splitted[i].toLowerCase() + " "
+//         }
+//     }
+
+//     return result.trim()
+// };
+
+// let title = "capiTalIze tHe of titLe"
+// let title1 = "i Love Leetcode"
+// console.log(capitalizeTitle(title1))
+
+var detectCapitalUse = function(word) {
+    let wordCap = word.toUpperCase()
+    let wordSma = word.toLowerCase()
+    let firstCap = word[0].toUpperCase() + word.slice(1).toLowerCase();
+    if(word === wordCap || word === wordSma || word === firstCap){
+        return true
+    }else{
+        return false
     }
-
-    return result.trim()
 };
-
-let title = "capiTalIze tHe of titLe"
-let title1 = "i Love Leetcode"
-console.log(capitalizeTitle(title1))
