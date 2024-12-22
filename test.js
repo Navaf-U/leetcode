@@ -271,29 +271,28 @@
 // // console.log(addSpaces(s,spaces));
 // console.log(addSpaces(s1,spaces1))
 
-var mergeAlternately = function(word1, word2) {
-    const l = word1.length > word2.length ? word1.length : word2.length
-    let output= ""
-    for(let i = 0 ; i< l;i++ ){
-        if(word1[i]){
-            output += word1[i] 
-        }
-        if(word2[i]){
-            output += word2[i]
-        }
-    }
+// var mergeAlternately = function(word1, word2) {
+//     const l = word1.length > word2.length ? word1.length : word2.length
+//     let output= ""
+//     for(let i = 0 ; i< l;i++ ){
+//         if(word1[i]){
+//             output += word1[i] 
+//         }
+//         if(word2[i]){
+//             output += word2[i]
+//         }
+//     }
 
-    return output
-};
+//     return output
+// };
 
 
 // var capitalizeTitle = function(title) {
 //     let loss = title.toLowerCase()
-
 //     let output = ""
     
 //     for(let i = 0 ; i<loss.length;i++){
-//         if(loss[i] == " "){
+//         if(loss[i] == " " && loss[i]){
 //             output +=" "+ loss[i+1].toUpperCase()
 //         }else if (loss[i-1] !== " "){
 //             output += loss[i]
@@ -305,5 +304,26 @@ var mergeAlternately = function(word1, word2) {
     
 // };
 
-// let title = "capiTalIze tHe titLe"
+// let title = "capiTalIze tHe of titLe"
 // console.log(capitalizeTitle(title))
+
+var capitalizeTitle = function(title) {
+    let loss = title.toLowerCase()
+    let splitted = loss.split(" ")
+    result = ""
+    for(let i = 0 ; i<splitted.length ; i++){
+        console.log(splitted[i])
+        if(splitted[i].length !== 2 && splitted[i].length !== 1 ){
+           result += splitted[i][0].toUpperCase() + splitted[i].slice(1) + " " 
+        }
+        else if(splitted[i].length <= 2){
+            result += splitted[i].toLowerCase() + " "
+        }
+    }
+
+    return result.trim()
+};
+
+let title = "capiTalIze tHe of titLe"
+let title1 = "i Love Leetcode"
+console.log(capitalizeTitle(title1))
