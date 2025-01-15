@@ -340,9 +340,28 @@
 //     }
 // };
 
-var removeOccurrences = function(s, part) {
-    while (s.includes(part)) {
-        s = s.replace(part, "");
+// var removeOccurrences = function(s, part) {
+//     while (s.includes(part)) {
+//         s = s.replace(part, "");
+//     }
+//     return s;
+// };
+
+
+var sortPeople = function (names, heights) {
+    let arr = []
+    let res =[]
+    for (let i = 0; i < names.length; i++) {
+        arr.push({name:names[i],height:heights[i]})
     }
-    return s;
+    arr.sort((a,b)=>b.height - a.height)
+    for (let i = 0; i < arr.length; i++) {
+        res.push(arr[i].name);
+    }
+    return res;
 };
+
+let names = ["IEO","Sgizfdfrims","QTASHKQ","Vk","RPJOFYZUBFSIYp","EPCFFt","VOYGWWNCf","WSpmqvb"]
+ let heights = [17233,32521,14087,42738,46669,65662,43204,8224]
+//["EPCFFt","RPJOFYZUBFSIYp","VOYGWWNCf","Vk","Sgizfdfrims","IEO","QTASHKQ","WSpmqvb"]
+console.log(sortPeople(names,heights))
