@@ -383,19 +383,39 @@
 //     return str
 // };
 
-var removeElement = function(nums, val) {
-    let result = 0;
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] !== val) {
-            nums[result++] = nums[i];
+// var removeElement = function(nums, val) {
+//     let result = 0;
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] !== val) {
+//             nums[result++] = nums[i];
+//         }
+//     }
+//     return result;
+// };
+
+// const nums = [3,2,2,3]
+// const val = 3
+
+// removeElement(nums,val)
+
+var findDifference = function(nums1, nums2){
+    let final1 = [...new Set(nums1)];
+    let final2 = [...new Set(nums2)]
+    let result =[]
+    let arr1 =[]
+    let arr2 =[]
+    for(let i=0;i<final1.length;i++){
+        if(!final2.includes(final1[i])){
+            arr1.push(final1[i])
         }
     }
-    return result;
+    for(let j=0;j<final2.length;j++){
+        if(!final1.includes(final2[j])){
+            arr2.push(final2[j])
+        }
+    }
+    result.push(arr1)
+    result.push(arr2)
+    return result
 };
-
-const nums = [3,2,2,3]
-const val = 3
-
-removeElement(nums,val)
-
 
