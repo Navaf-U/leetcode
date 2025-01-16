@@ -366,19 +366,36 @@
 // //["EPCFFt","RPJOFYZUBFSIYp","VOYGWWNCf","Vk","Sgizfdfrims","IEO","QTASHKQ","WSpmqvb"]
 // console.log(sortPeople(names,heights))
 
-var sortVowels = function (s) {
-    let vowels = "AEIOUaeiou"
-    let index = 0
-    let sortString = s.split("").filter((i) => vowels.includes(i)).sort().join("")
-    let str = ""
-    for (let i = 0; i < s.length; i++) {
-        if (vowels.includes(s[i])) {
-            str += sortString[index]
-            index++
-        } else {
-            str += s[i]
+// var sortVowels = function (s) {
+//     let vowels = "AEIOUaeiou"
+//     let index = 0
+//     let sortString = s.split("").filter((i) => vowels.includes(i)).sort().join("")
+//     let str = ""
+//     for (let i = 0; i < s.length; i++) {
+//         if (vowels.includes(s[i])) {
+//             str += sortString[index]
+//             index++
+//         } else {
+//             str += s[i]
+//         }
+//     }
+
+//     return str
+// };
+
+var removeElement = function(nums, val) {
+    let result = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== val) {
+            nums[result++] = nums[i];
         }
     }
-
-    return str
+    return result;
 };
+
+const nums = [3,2,2,3]
+const val = 3
+
+removeElement(nums,val)
+
+
