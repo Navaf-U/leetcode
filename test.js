@@ -419,9 +419,19 @@
 //     return result
 // };
 
-var plusOne = function(digits) {
-    let str = digits.join("");
-    let num = BigInt(str) + BigInt(1);
-    return num.toString().split("").map((i)=>Number(i));
-};
+// var plusOne = function(digits) {
+//     let str = digits.join("");
+//     let num = BigInt(str) + BigInt(1);
+//     return num.toString().split("").map((i)=>Number(i));
+// };
 
+var cancellable = function(fn, args, t) {
+    let timeout;
+    const cancelFn =() =>{
+        clearTimeout(timeout)
+    }
+    timeout = setTimeout (()=>{
+        fn(...args)
+    },t)
+    return cancelFn
+};
