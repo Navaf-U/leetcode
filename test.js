@@ -425,13 +425,25 @@
 //     return num.toString().split("").map((i)=>Number(i));
 // };
 
-var cancellable = function(fn, args, t) {
-    let timeout;
-    const cancelFn =() =>{
-        clearTimeout(timeout)
+// var cancellable = function(fn, args, t) {
+//     let timeout;
+//     const cancelFn =() =>{
+//         clearTimeout(timeout)
+//     }
+//     timeout = setTimeout (()=>{
+//         fn(...args)
+//     },t)
+//     return cancelFn
+// };
+
+var debounce = function (fn, t) {
+    let timeout = null;
+    return function (...args) {
+        if (timeout !== null) {
+            clearTimeout(timeout);
+        }
+        timeout = setTimeout(() => {
+            fn(...args);
+        }, t);
     }
-    timeout = setTimeout (()=>{
-        fn(...args)
-    },t)
-    return cancelFn
 };
