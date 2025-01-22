@@ -398,24 +398,30 @@
 
 // removeElement(nums,val)
 
-var findDifference = function(nums1, nums2){
-    let final1 = [...new Set(nums1)];
-    let final2 = [...new Set(nums2)]
-    let result =[]
-    let arr1 =[]
-    let arr2 =[]
-    for(let i=0;i<final1.length;i++){
-        if(!final2.includes(final1[i])){
-            arr1.push(final1[i])
-        }
-    }
-    for(let j=0;j<final2.length;j++){
-        if(!final1.includes(final2[j])){
-            arr2.push(final2[j])
-        }
-    }
-    result.push(arr1)
-    result.push(arr2)
-    return result
+// var findDifference = function(nums1, nums2){
+//     let final1 = [...new Set(nums1)];
+//     let final2 = [...new Set(nums2)]
+//     let result =[]
+//     let arr1 =[]
+//     let arr2 =[]
+//     for(let i=0;i<final1.length;i++){
+//         if(!final2.includes(final1[i])){
+//             arr1.push(final1[i])
+//         }
+//     }
+//     for(let j=0;j<final2.length;j++){
+//         if(!final1.includes(final2[j])){
+//             arr2.push(final2[j])
+//         }
+//     }
+//     result.push(arr1)
+//     result.push(arr2)
+//     return result
+// };
+
+var plusOne = function(digits) {
+    let str = digits.join("");
+    let num = BigInt(str) + BigInt(1);
+    return num.toString().split("").map((i)=>Number(i));
 };
 
