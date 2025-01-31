@@ -448,14 +448,32 @@
 //     }
 // };
 
-var isAnagram = function(s, t) {
-    let ss = s.split("").sort()
-   let tt = t.split("").sort()
-   let l = tt.length > ss.length ? tt.length : ss.length
-   for(let i = 0 ; i<l ; i++){
-       if(tt[i] !== ss[i] ){
-           return false
-       }
-   }
-   return true
+// var isAnagram = function(s, t) {
+//     let ss = s.split("").sort()
+//    let tt = t.split("").sort()
+//    let l = tt.length > ss.length ? tt.length : ss.length
+//    for(let i = 0 ; i<l ; i++){
+//        if(tt[i] !== ss[i] ){
+//            return false
+//        }
+//    }
+//    return true
+// };
+
+var longestCommonPrefix = function (strs) {
+    if (strs.length === 0) return "";
+    let result = strs[0];
+    
+    for (let i = 1; i < strs.length; i++) {
+        for (let j = 0; j < result.length; j++) {
+            if (strs[i][j] !== result[j]) {
+                result = result.slice(0, j);
+                break
+            }
+        }
+        if (result === ""){
+            return ""
+        }
+    }
+    return result;
 };
