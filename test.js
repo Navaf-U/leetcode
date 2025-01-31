@@ -436,14 +436,26 @@
 //     return cancelFn
 // };
 
-var debounce = function (fn, t) {
-    let timeout = null;
-    return function (...args) {
-        if (timeout !== null) {
-            clearTimeout(timeout);
-        }
-        timeout = setTimeout(() => {
-            fn(...args);
-        }, t);
-    }
+// var debounce = function (fn, t) {
+//     let timeout = null;
+//     return function (...args) {
+//         if (timeout !== null) {
+//             clearTimeout(timeout);
+//         }
+//         timeout = setTimeout(() => {
+//             fn(...args);
+//         }, t);
+//     }
+// };
+
+var isAnagram = function(s, t) {
+    let ss = s.split("").sort()
+   let tt = t.split("").sort()
+   let l = tt.length > ss.length ? tt.length : ss.length
+   for(let i = 0 ; i<l ; i++){
+       if(tt[i] !== ss[i] ){
+           return false
+       }
+   }
+   return true
 };
