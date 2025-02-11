@@ -460,20 +460,37 @@
 //    return true
 // };
 
-var longestCommonPrefix = function (strs) {
-    if (strs.length === 0) return "";
-    let result = strs[0];
+// var longestCommonPrefix = function (strs) {
+//     if (strs.length === 0) return "";
+//     let result = strs[0];
     
-    for (let i = 1; i < strs.length; i++) {
-        for (let j = 0; j < result.length; j++) {
-            if (strs[i][j] !== result[j]) {
-                result = result.slice(0, j);
-                break
-            }
-        }
-        if (result === ""){
-            return ""
-        }
-    }
-    return result;
+//     for (let i = 1; i < strs.length; i++) {
+//         for (let j = 0; j < result.length; j++) {
+//             if (strs[i][j] !== result[j]) {
+//                 result = result.slice(0, j);
+//                 break
+//             }
+//         }
+//         if (result === ""){
+//             return ""
+//         }
+//     }
+//     return result;
+// };
+
+
+var mostWordsFound = function(sentences) {
+    let splittedArr = sentences.join(",").split(",")
+    let arrPush = []
+    for(let i = 0 ; i<splittedArr.length;i++){
+      let count = 0
+      let splitMoree = splittedArr[i].split("")
+      for(let i = 0 ; i<splitMoree.length;i++){
+      if(splitMoree[i] === " " ){
+          count++
+      }
+      }
+      arrPush.push(count+1)
+  }
+  return Math.max(...arrPush)
 };
