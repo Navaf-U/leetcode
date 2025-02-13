@@ -506,18 +506,30 @@
 //     return count
 // };
 
-var mostWordsFound = function(sentences) {
-    let splittedArr = sentences.join(",").split(",")
-    let arrPush = []
-    for(let i = 0 ; i<splittedArr.length;i++){
-      let count = 0
-      let splitMoree = splittedArr[i].split("")
-      for(let i = 0 ; i<splitMoree.length;i++){
-      if(splitMoree[i] === " " ){
-          count++
-      }
-      }
-      arrPush.push(count+1)
-  }
-  return Math.max(...arrPush)
-};
+// var mostWordsFound = function(sentences) {
+//     let splittedArr = sentences.join(",").split(",")
+//     let arrPush = []
+//     for(let i = 0 ; i<splittedArr.length;i++){
+//       let count = 0
+//       let splitMoree = splittedArr[i].split("")
+//       for(let i = 0 ; i<splitMoree.length;i++){
+//       if(splitMoree[i] === " " ){
+//           count++
+//       }
+//       }
+//       arrPush.push(count+1)
+//   }
+//   return Math.max(...arrPush)
+// };
+
+var arrayStringsAreEqual = function(word1, word2) {
+    const w1 = word1.join("").split("")
+    const w2 = word2.join("").split("")
+    console.log(w1,w2)
+   if(w1.length !== w2.length ) return false
+   for(let i = 0 ; i<w1.length;i++){
+       if(w1[i] !== w2[i]) return false
+   }
+   
+   return true
+  };
