@@ -495,13 +495,29 @@
 //   return Math.max(...arrPush)
 // };
 
-var numJewelsInStones = function (jewels, stones) {
-    let l = jewels.length > stones.length ? jewels.length : stones.length
-    let count = 0
-    for(let i = 0 ; i<l ; i++ ){
-        if(jewels.includes(stones[i])){
-            count++
-        }
-    }
-    return count
+// var numJewelsInStones = function (jewels, stones) {
+//     let l = jewels.length > stones.length ? jewels.length : stones.length
+//     let count = 0
+//     for(let i = 0 ; i<l ; i++ ){
+//         if(jewels.includes(stones[i])){
+//             count++
+//         }
+//     }
+//     return count
+// };
+
+var mostWordsFound = function(sentences) {
+    let splittedArr = sentences.join(",").split(",")
+    let arrPush = []
+    for(let i = 0 ; i<splittedArr.length;i++){
+      let count = 0
+      let splitMoree = splittedArr[i].split("")
+      for(let i = 0 ; i<splitMoree.length;i++){
+      if(splitMoree[i] === " " ){
+          count++
+      }
+      }
+      arrPush.push(count+1)
+  }
+  return Math.max(...arrPush)
 };
