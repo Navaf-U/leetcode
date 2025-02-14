@@ -522,14 +522,22 @@
 //   return Math.max(...arrPush)
 // };
 
-var arrayStringsAreEqual = function(word1, word2) {
-    const w1 = word1.join("").split("")
-    const w2 = word2.join("").split("")
-    console.log(w1,w2)
-   if(w1.length !== w2.length ) return false
-   for(let i = 0 ; i<w1.length;i++){
-       if(w1[i] !== w2[i]) return false
-   }
+// var arrayStringsAreEqual = function(word1, word2) {
+//     const w1 = word1.join("").split("")
+//     const w2 = word2.join("").split("")
+//     console.log(w1,w2)
+//    if(w1.length !== w2.length ) return false
+//    for(let i = 0 ; i<w1.length;i++){
+//        if(w1[i] !== w2[i]) return false
+//    }
    
-   return true
-  };
+//    return true
+//   };
+
+var checkIfPangram = function(sentence) {
+    const hurr = [...new Set(sentence)].join("")
+    if(hurr.length === 26 ){
+        return true
+    }
+    return false
+};
