@@ -534,10 +534,18 @@
 //    return true
 //   };
 
-var checkIfPangram = function(sentence) {
-    const hurr = [...new Set(sentence)].join("")
-    if(hurr.length === 26 ){
-        return true
+// 
+
+var rearrangeArray = function (nums) {
+    let post = [];
+    let negt = [];
+    for (let num of nums) {
+        if (num > 0) post.push(num);
+        else negt.push(num);
     }
-    return false
+    let result = [];
+    for (let i = 0; i < post.length; i++) {
+        result.push(post[i], negt[i]);
+    }
+    return result;
 };
